@@ -88,4 +88,52 @@ int main()
     
     
 }
+****************************************
+//creation of linked list
+#include<bits/stdc++.h>
+using namespace std;
+struct node
+{
+    int data;
+    struct node *next;
+    node(int x)
+    {
+        data=x;
+        next=NULL;
+    }
+};
+int main()
+{
+    int n;cin>>n;
+    struct node* head=NULL;
+    struct node* temp;
+    for(int i=0;i<n;i++)
+    {
+        int x;
+        cin>>x;
+        struct node* newnode=new node(x);
+        
+        
+        if(head==NULL)
+        {
+            head=newnode;
+            temp=newnode;
+            temp->next=NULL;
+        }
+        else
+        {
+            head=newnode;
+            head->next=temp;
+            temp=head;
+            
+            
+        }
+    }
+    temp=head;
+    while(temp!=NULL)
+    {
+        cout<<temp->data<<"->";
+        temp=temp->next;
+    }
+}
 
