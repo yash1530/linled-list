@@ -1,4 +1,4 @@
-# linled-list
+# linked-list
 //ctreation of ll
 #include <bits/stdc++.h>
 using namespace std;
