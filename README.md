@@ -136,4 +136,66 @@ int main()
         temp=temp->next;
     }
 }
+******************************??????????????????????????????????????????????????????? arey yar its new one
+#include <bits/stdc++.h>
+using namespace std;
+struct node
+{
+    int data;
+    struct node *next;
+    node(int x)
+    {
+        data=x;
+        next=NULL;
+    }
+};
+struct node * head=NULL;
+struct node *temp=head;
+struct node *temp1=head;
+void print(node *head)
+{
+    while(head!=NULL)
+    {
+        cout<<head->data<<"->";
+        head=head->next;
+    }
+}
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	for(int i=0;i<t;i++)
+	{
+	    int data;cin>>data;int n;cin>>n;
+	    struct node *newnode=new node(data);
+	    //newnode=node(data);
+	    if(n==1 and head==NULL)
+	    {
+	        head=newnode;
+	        temp=newnode;
+	        temp->next=NULL;
+	    }
+	    else if(n==1 and head!=NULL)
+	    {
+	        temp->next=newnode;
+	        temp=newnode;
+	        temp->next=NULL;
+	    }
+	      else if(n==0 and  head==NULL)
+	    {
+	        head=newnode;
+	        temp=newnode;
+	        temp->next=NULL;
+	    }
+	    else if(n==0 and head!=NULL)
+	    {
+	        newnode->next=head;
+	        head=newnode;
+	    }
+	}
+	print(head);
+	
+	return 0;
+}
 
